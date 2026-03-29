@@ -16,7 +16,7 @@ db_file = path.join(parent_dir, "ratings.db")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_wines(request: Request):
-    return templates.TemplateResponse("index.j2", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.j2", context={})
 
 
 @app.get("/api/ratings")
